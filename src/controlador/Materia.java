@@ -63,17 +63,17 @@ public class Materia implements CRUD {
                                     eliminado = true;
                                     break;
                                 } else {
-                                    break;
+                                    return;
                                 }
                             }
                         }
                     }
-                    if (eliminado) {
-                        iterMaterias.remove();
-                        StringBuilder mensaje = new StringBuilder("Materia con codigo " + idMateria + " eliminada");
-                        JOptionPane.showMessageDialog(null, mensaje);
-                        break;
-                    }
+                }
+                if (existe || eliminado) {
+                    iterMaterias.remove();
+                    StringBuilder mensaje = new StringBuilder("Materia con codigo " + idMateria + " eliminada");
+                    JOptionPane.showMessageDialog(null, mensaje);
+                    break;
                 }
             }
             if (!existe) {
